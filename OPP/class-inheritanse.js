@@ -15,7 +15,7 @@ class Car {
 
 class Model extends Car {
     constructor(company, brand, year) {
-        super(company, year);
+        super(company, year); // inherit this
         this.brand = brand;
     }
 }

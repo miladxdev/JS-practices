@@ -15,6 +15,6 @@ class Car {
 }
 let myCar1 = new Car('Ford', 'Mustang', 1969);
 
-let carArr = JSON.stringify(myCar1);
-console.log(typeof(carArr));
+let carArr = JSON.stringify(myCar1); // parse to string
+console.log(carArr);
 
