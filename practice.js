@@ -32,3 +32,5 @@ function generateRandomAlphaNum(len) {
 console.log(generateRandomAlphaNum(10));
 */
 
+// eval( ) finction
+//console.log(eval("2+3"));

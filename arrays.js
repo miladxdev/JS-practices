@@ -33,5 +33,16 @@ var arr3 = arr1.concat(arr2);
 // for each loop
 var names = ["Ellie", "Joel", "Abbi"];
 names.forEach((value, index, arr) => {
-    console.table(`${arr} ${index} ${value}`);
+    // console.table(`${arr} ${index} ${value}`);
 })
+
+// Get the max or the min in an array of numbers
+var numbs = [5, 12, 8, 44, 16, 18];
+var maxNum = Math.max.apply(Math, numbs);
+var minNum = Math.min.apply(Math, numbs);
+console.log(minNum);
+
+// Empty an array
+var days = ["sunday", "friday"];
+// days.length = 0;
+console.log(days);
