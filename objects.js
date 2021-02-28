@@ -24,7 +24,7 @@ user2.name = 'mike'; // !!! this will change user1.name property
 // console.log(user1);
 
 
-// clone an object
+// clone an object [1]
 let admin = {
     name: 'john',
     age: 30
@@ -37,4 +37,20 @@ for (let key in admin) {
 clone.name = "jess"; // this doesnt effect the original object
 // console.log(admin);
 
+
+// clone an object [2]
+let book1 = { 
+    name1: 'animal farm',
+    author: 'George Orwell',
+    year: 1945
+}
+let book2 = {
+    name: 1984,
+    author: 'George Orwell',
+    year: 1949,
+    pages: 328
+}
+let novels = {}; // new empty objct
+Object.assign(novels, book1, book2); // copies all properties from book1 & book2 into novels. If the copied property name already exists, it gets overwritten.
+// console.log(novels);
 
