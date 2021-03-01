@@ -34,3 +34,17 @@ console.log(generateRandomAlphaNum(10));
 
 // eval( ) finction
 //console.log(eval("2+3"));
+
+// let yourName = prompt('Enter your name: ','john doe');
+// console.log(yourName);
+
+// let question = confirm("do you like apple?");
+// console.log(question);
+
+
+// Numberic Conversion
+let str = "123";
+console.log(typeof str);
+
+str = Number(str);
+console.log(typeof str);

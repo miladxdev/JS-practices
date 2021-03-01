@@ -12,4 +12,10 @@ let txt7 = txt.charAt(6); // returns W
 //     txt2 += txt1[i];
 // }
 
-console.log(txt6);
+// console.log(txt6);
+
+// String Conversion
+let value = true;
+console.log(typeof value);
+value1 = String(value);
+console.log(typeof value);

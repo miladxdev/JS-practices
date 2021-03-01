@@ -40,9 +40,17 @@ names.forEach((value, index, arr) => {
 var numbs = [5, 12, 8, 44, 16, 18];
 var maxNum = Math.max.apply(Math, numbs);
 var minNum = Math.min.apply(Math, numbs);
-console.log(minNum);
+//console.log(minNum);
 
 // Empty an array
 var days = ["sunday", "friday"];
-// days.length = 0;
-console.log(days);
+days.length = 0;
+// console.log(days);
+
+// arraya for each
+let ranks = ['A', 'B', 'C'];
+// ranks.forEach(function (e) {
+//     console.log(e);
+// });
+
+ranks.forEach(e => console.log(e));  // ES6
