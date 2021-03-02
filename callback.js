@@ -1,18 +1,12 @@
-let users = {
-    name: ['Milad'],
-    age: [22]
-};
+users = ['Milad', 'Masoud'];
 
-function addUser(name, age) {
-    users.name.push(name);
-    users.age.push(age);
+function addUser(name, callback) {
+    users.push(name);
+    callback();
 }
-addUser('Jess', 32);
-//     users.push(user);
-//     addRank();
-// }
-// function addRank() {
-//     users.push(1);
-// }
-//addUser(users.length+'milad', addRank);
-console.log(users);
+
+function printUser() {
+    console.log(users);
+}
+
+addUser('Ali', printUser);
