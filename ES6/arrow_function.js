@@ -1,3 +1,25 @@
-// this is a normal function
-var numbers = [1, 2, 3 ,4 ,5 ,6 ,7 ,8 ,9 ,10];
-var result = '';
+
+// function welcome(name) {
+//     return "Hello " + name; 
+// }
+// welcome("John"); // Hello John
+
+// let welcome = function(name) {
+//     return "Hello " + name; 
+// }
+
+
+// let welcome = (name) => {
+//     return "Hello " + name; 
+// }
+
+
+
+let welcome = (name) => ( "Hello " + name );
+
+// let welcome = (name) => "Hello " + name;
+
+ let welcome = name => "Hello " + name;
+
+
+console.log(welcome("guys")); // => Hello guys

@@ -34,7 +34,7 @@ let clone = {}; // new empty object
 for (let key in admin) {
     clone[key] = user[key];
 }
-clone.name = "jess"; // this doesnt effect the original object
+clone.name = "jess"; // this doesnt effect on the original object
 // console.log(admin);
 
 
@@ -51,6 +51,11 @@ let book2 = {
     pages: 328
 }
 let novels = {}; // new empty objct
-Object.assign(novels, book1, book2); // copies all properties from book1 & book2 into novels. If the copied property name already exists, it gets overwritten.
+// Object.assign(novels, book1, book2); // copies all properties from book1 & book2 into novels. If the copied property name already exists, it gets overwritten.
 // console.log(novels);
-
+let cloneBook = Object.assign({}, book2);
+console.log(name in cloneBook);
+let cars = {};
+for (let key in cars) {
+    //console.log(key);
+}
