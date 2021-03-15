@@ -14,8 +14,8 @@ function Person(name, lastName) {
     this.lastName = lastName;
 }
 Person.prototype.age = 25;
-var user = new Person("milad", "gharibi");
-// console.log(user.age);
+var myUser = new Person("milad", "gharibi");
+// console.log(myUser.age);
 
 // copy an object
 let user1 = { name: 'john'};
@@ -32,7 +32,7 @@ let admin = {
 let clone = {}; // new empty object
 // copy all user properties
 for (let key in admin) {
-    clone[key] = user[key];
+    clone[key] = user1[key];
 }
 clone.name = "jess"; // this doesnt effect on the original object
 // console.log(admin);
@@ -54,8 +54,46 @@ let novels = {}; // new empty objct
 // Object.assign(novels, book1, book2); // copies all properties from book1 & book2 into novels. If the copied property name already exists, it gets overwritten.
 // console.log(novels);
 let cloneBook = Object.assign({}, book2);
-console.log(name in cloneBook);
+// console.log(cloneBook.name in cloneBook);
 let cars = {};
 for (let key in cars) {
     //console.log(key);
 }
+
+// Object constractor
+function City(name) { // can convert to class
+    this.name = name;  
+    this.sayCity = function() {
+        // console.log("this is "+this.name);
+    }
+}
+let myCity = new City('fooladshahr');
+myCity.sayCity();
+
+
+
+let user = {
+    first_name: "John",
+    last_name: "Doe",
+    password: 123456
+}
+
+
+
+// let fname = "John";
+// let lname = "Doe";
+// let password = 123456;
+// let isAdmin = false;
+
+// let user = {
+//     fname: 'John',
+//     lname: 'Doe',
+//     password: 123456,
+//     isAdmin: false
+// }
+
+// // "object constructor" syntax
+// let user = new Object(); 
+
+// // "object literal" syntax
+// let user = {};  
