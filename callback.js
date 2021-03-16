@@ -1,4 +1,4 @@
-users = ['Milad', 'Masoud'];
+users = ['Milad', 'Masoud']; // Server
 
 function addUser(name, callback) {
     users.push(name);

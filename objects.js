@@ -71,29 +71,40 @@ let myCity = new City('fooladshahr');
 myCity.sayCity();
 
 
-
-let user = {
-    first_name: "John",
-    last_name: "Doe",
-    password: 123456
-}
-
-
-
 // let fname = "John";
 // let lname = "Doe";
 // let password = 123456;
 // let isAdmin = false;
 
-// let user = {
-//     fname: 'John',
-//     lname: 'Doe',
-//     password: 123456,
-//     isAdmin: false
-// }
+let user = {
+    fname: 'John',
+    lname: 'Doe',
+    fullName: function() {
+        return this.fname + " " 
+        + this.lname;
+    },
+    password: 123456,
+    isAdmin: false
+}
 
-// // "object constructor" syntax
-// let user = new Object(); 
+// "object constructor" syntax
+//let user = new Object(); 
 
-// // "object literal" syntax
-// let user = {};  
+// "object literal" syntax
+//let user = {};  
+
+
+// get property values of the object:
+
+console.log( user.fullName() ); // John Doe
+console.log( user.password ); // 123456
+console.log( user['isAdmin'] ); // false
+
+for (key in user) {
+    console.log(key);
+} 
+// fname
+// lname
+// fullName
+// password
+// isAdmin
