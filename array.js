@@ -98,7 +98,32 @@ let rgb = allColors.slice(0, 3); //doesn’t change the source array.
 // Clone an array
 let angles = [0, 45, 90, 135];
 let cloneAngles = angles.slice();
-console.log(cloneAngles);
+//console.log(cloneAngles);
 
 // Convert array-like objects into arrays
 // var list = [].slice.call(document.querySelectorAll('p'));
+
+
+// every() tests every element in an array.
+let planet = [3, 5, 8];
+// let myResult = planet.every(function (v) {
+//     return v > 2;
+// });
+let myResult = planet.every( v => v > 4); // ES6
+//console.log(myResult);
+
+
+// In this example, we pass the range object to the every() 
+// method as the second argument. And inside the callback() function,
+// we reference the range object using the this keyword.
+let range = {
+    min: 0,
+    max: 360
+};
+let radian = [0, 30, 60, 90, 120, 180];
+
+let isInRange = radian.every(function(v) {
+    return v >= this.min && v <= this.max;
+}, range);
+
+console.log(isInRange);
