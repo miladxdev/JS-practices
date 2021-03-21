@@ -36,7 +36,7 @@ names.forEach((value, index, arr) => {
     // console.table(`${arr} ${index} ${value}`);
 })
 
-// Get the max or the min in an array of numbers
+// Get the max / min values in an array of numbers
 var numbs = [5, 12, 8, 44, 16, 18];
 var maxNum = Math.max.apply(Math, numbs);
 var minNum = Math.min.apply(Math, numbs);
@@ -47,10 +47,58 @@ var days = ["sunday", "friday"];
 days.length = 0;
 // console.log(days);
 
-// arraya for each
+// for each loop
 let ranks = ['A', 'B', 'C'];
 // ranks.forEach(function (e) {
 //     console.log(e);
 // });
+// ranks.forEach(e => console.log(e));  // ES6
 
-ranks.forEach(e => console.log(e));  // ES6
+// string is an array
+let animal = 'sheep';
+// console.log(animal[1]); // h
+
+// reverse an string (1)
+function myReverse(str) {
+    let stack = [];
+    len = str.length-1;
+    while (len > -1) {
+        stack.push(str[len]);
+        len--;
+    }
+    console.log(stack.join(''));
+}
+//myReverse('hello');
+
+// reverse an string (2)
+function reverse(str) {
+    let stack = [];
+    for (let i = 0; i < str.length; i++) {
+        stack.push(str[i]);
+    }
+    let reversestr = '';
+    while(stack.length > 0) {
+        reversestr += stack.pop();
+    }
+    console.log(reversestr);
+}
+// reverse('France');
+
+
+// Deleting elements using JavaScript Array’s splice() method
+let score = [25, 45, 55, 66];
+deletedScore = score.splice(0, 3);
+// console.log(deletedScore,score);
+
+// extract subset elements of an array and add them to the new array
+let allColors = ['red', 'green', 'blue', 'yellow', 'purple'];
+let rgb = allColors.slice(0, 3); //doesn’t change the source array.
+//console.log(rgb, allColors);
+
+// Clone an array
+let angles = [0, 45, 90, 135];
+let cloneAngles = angles.slice();
+console.log(cloneAngles);
+
+// Convert array-like objects into arrays
+// var list = [].slice.call(document.querySelectorAll('p'));
