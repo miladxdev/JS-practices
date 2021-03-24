@@ -106,10 +106,10 @@ let cloneAngles = angles.slice();
 
 // every() tests every element in an array.
 let planet = [3, 5, 8];
-// let myResult = planet.every(function (v) {
-//     return v > 2;
-// });
-let myResult = planet.every( v => v > 4); // ES6
+let myResult = planet.every(function (v) {
+    return v > 2;
+});
+// let myResult = planet.every( v => v > 4); // ES6
 //console.log(myResult);
 
 
