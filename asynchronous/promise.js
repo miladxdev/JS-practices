@@ -27,7 +27,7 @@ var willIGetPhone = new Promise(
             resolve(phone); // fulfilled
         } else {
             var reason = new Error('mom is not happy');
-            reject(reason);
+            reject(reason); // reject
         }
     }
 );
@@ -38,7 +38,7 @@ var askMom = function () {
     willIGetPhone.then(function (fulfilled) {
         console.log(fulfilled);
 
-    }).catch(function (error){
+    }).catch(function (error) {
         console.log(error.message);
         
     });
