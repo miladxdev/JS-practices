@@ -14,14 +14,16 @@
 // });
 
 
-// ES5: part 1
+// ES5: Full example
+
 var isMomHappy = true;
 
-var willIGetPhone = new Promise(
+// Promise
+var willIGetNewPhone = new Promise(
     function (resolve, reject) {
         if (isMomHappy) {
             var phone = {
-                brand: 'apple',
+                brand: 'iPhone',
                 color: 'gold'
             };
             resolve(phone); // fulfilled
@@ -29,19 +31,31 @@ var willIGetPhone = new Promise(
             var reason = new Error('mom is not happy');
             reject(reason); // reject
         }
+
     }
 );
 
-// ES5: Part 2
+// 2nd promise
+var showOff = function (phone) {
+    var message = 'Hey friend, I have a new ' +
+                phone.color + ' ' + phone.brand + ' phone';
+
+    return Promise.resolve(message);
+};
+
 // call our promise
 var askMom = function () {
-    willIGetPhone.then(function (fulfilled) {
-        console.log(fulfilled);
-
-    }).catch(function (error) {
-        console.log(error.message);
-        
-    });
+    willIGetNewPhone
+    .then(showOff) // chain it here
+    .then(function (fulfilled) {
+            console.log(fulfilled);
+            // output: 'Hey friend, I have a new black Samsung phone.'
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.log(error.message);
+            // output: 'mom is not happy'
+        });
 };
 
 askMom();

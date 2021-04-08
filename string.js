@@ -1,7 +1,7 @@
 const txt = 'Hello Worlds';
 
-let len = txt.length;
-let arr =  txt.split(''); // convert to array
+let len  = txt.length;
+let arr  =  txt.split(''); // convert to array
 let txt3 = txt.slice(0, -1);
 let txt4 = txt.substring(0, 3); // cant accept negative indexes!
 let txt5 = txt.substr(0, 5); // 2nd param is length
@@ -10,7 +10,7 @@ let txt7 = txt.charAt(6); // returns W
 let txt8 = txt.concat(' ', 'and univers');
 let txt9 = txt.padStart(15, '#');
 let txt10 = txt.padEnd(20, '-');
-let txt11 = txt.includes('W');
+let txt11 = txt.includes('W'); // true
 console.log(txt11);
 
 
@@ -29,3 +29,11 @@ const message = '    hey man!  ';
 let trimed = message.trim(); // trim white spaces from begining and the end
 // console.log(trimed);
 
+
+let str = 'As sly as a fox, as strong as an ox';
+let target = 'as';
+let pos = -1;
+
+while ((pos = str.indexOf(target, pos + 1)) != -1) {
+    console.log(pos);
+}
