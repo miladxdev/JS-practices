@@ -80,7 +80,7 @@ function reverse(str) {
     while(stack.length > 0) {
         reversestr += stack.pop();
     }
-    console.log(reversestr);
+    // console.log(reversestr);
 }
 // reverse('France');
 
@@ -108,8 +108,8 @@ let rgb = allColors.slice(0, 3); //doesn’t change the source array.
 // -------- Split -------- [string -> array]
 let games = 'GTA V, Evil 4, Witcher 3';
 let arr_games = games.split(',');
-console.log(arr_games);
-for (let game of arr_games) console.log(game.trim());
+// console.log(arr_games);
+// for (let game of arr_games) console.log(game.trim());
 
 
 // Clone an array
@@ -145,3 +145,25 @@ let isInRange = radian.every(function(v) {
 }, range);
 
 // console.log(isInRange);
+
+// find and findIndex
+// If it returns true, the search is stopped, the item is returned. If nothing found, undefined is returned.
+let student = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 2, name: "Pete2"},
+  {id: 3, name: "Mary"}
+];
+let search_st = student.find( item => item.id == 2);
+let filter_st = student.filter( item => item.id < 3);
+// console.log(filter_st);
+
+// ---------- MAP
+// returns the new value instead of item
+let character = ["Bilbo", "Gandalf", "Nazgul"];
+// character.map(item => console.log(item.length));
+
+// sort(fn)
+let shuffle_numbers = [10, -5, 5, 15, 8, 2];
+shuffle_numbers.sort((a, b) => a - b);
+console.log(shuffle_numbers);
