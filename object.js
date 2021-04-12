@@ -93,18 +93,42 @@ let user = {
 // "object literal" syntax
 //let user = {};  
 
-
-// get property values of the object:
-
-console.log( user.fullName() ); // John Doe
-console.log( user.password ); // 123456
-console.log( user['isAdmin'] ); // false
-
 for (key in user) {
-    console.log(key);
+    // console.log(user[key]);
 } 
-// fname
-// lname
-// fullName
-// password
-// isAdmin
+
+
+// MAP and SET - Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+let john = { name: "John" };
+
+let map = new Map();
+map.set('1', 'srt1');
+map.set(1, 1234);
+map.set(true, 'bool1');
+map.set(john, 555); // object as key
+
+// console.log(map.size);
+// console.log(map.get(john));
+
+
+// Iteration over Map
+let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',     50]
+]);
+
+for (let vegetable of recipeMap.keys()) {
+    console.log(vegetable);
+}
+
+for (let amount of recipeMap.values()) {
+    console.log(amount);
+}
+
+for (let entry of recipeMap) {
+    console.log(entry);
+}
+recipeMap.forEach( (value, key, map) => {
+  console.log(`${key}: ${value}`); // cucumber: 500 etc
+});
