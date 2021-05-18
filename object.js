@@ -108,7 +108,7 @@ map.set(true, 'bool1');
 map.set(john, 555); // object as key
 
 // console.log(map.size);
-// console.log(map.get(john));
+// console.log(map.get(john)); // 555
 
 
 // Iteration over Map

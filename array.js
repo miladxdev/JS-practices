@@ -48,10 +48,15 @@ days.length = 0;
 // console.log(days);
 
 // for each loop
+
+
 let ranks = ['A', 'B', 'C'];
-// ranks.forEach(function (e) {
-//     console.log(e);
-// });
+
+ranks.forEach(function (e) {
+    // console.log(e);
+});
+
+
 // ranks.forEach(e => console.log(e));  // ES6
 
 // string is an array
@@ -87,10 +92,10 @@ function reverse(str) {
 // -------- splice -------- [delete]
 // Deleting elements using JavaScript Array’s splice() method
 let score = [25, 30, 40, 55, 66, 70];
-// let deletedScore = score.splice(1, 2); // from index 1, delete 2 item
+let deletedScore = score.splice(1, 2); // from index 1, delete 2 item
 // let delScore = score.splice(2, 4, 'new', 'new'); // from index 2, remove 4 item and replace with new items
 // score.splice(3, 0, 'new'); // remove 0 item and insert new item
-score.splice(-1, 0, 100, 200); // from index -1 delete 0 and insert 11 and 22
+// score.splice(-1, 0, 100, 200); // from index -1 delete 0 and insert 11 and 22
 // console.log(deletedScore,score);
 // console.log(score);
 
@@ -100,7 +105,7 @@ score.splice(-1, 0, 100, 200); // from index -1 delete 0 and insert 11 and 22
 // extract subset elements of an array and add them to the new array
 let allColors = ['red', 'green', 'blue', 'yellow', 'purple'];
 let rgb = allColors.slice(0, 3); //doesn’t change the source array.
-//console.log(rgb, allColors);
+// console.log(rgb, allColors);
 
 
 
@@ -108,7 +113,8 @@ let rgb = allColors.slice(0, 3); //doesn’t change the source array.
 // -------- Split -------- [string -> array]
 let games = 'GTA V, Evil 4, Witcher 3';
 let arr_games = games.split(',');
-// console.log(arr_games);
+let str_games = arr_games.join('/'); // array -> string
+// console.log(str_games);
 // for (let game of arr_games) console.log(game.trim());
 
 
@@ -121,18 +127,20 @@ let cloneAngles = angles.slice();
 // var list = [].slice.call(document.querySelectorAll('p'));
 
 
-// every() tests every element in an array.
+// every() tests every element in an array. stops when result is false
 let planet = [3, 5, 8];
 let myResult = planet.every(function (v) {
+    // console.log(v);
     return v > 2;
 });
 // let myResult = planet.every( v => v > 4); // ES6
-//console.log(myResult);
+// console.log(myResult);
 
 
 // In this example, we pass the range object to the every() 
 // method as the second argument. And inside the callback() function,
 // we reference the range object using the this keyword.
+
 let range = {
     min: 0,
     max: 360
@@ -154,8 +162,8 @@ let student = [
   {id: 2, name: "Pete2"},
   {id: 3, name: "Mary"}
 ];
-let search_st = student.find( item => item.id == 2);
-let filter_st = student.filter( item => item.id < 3);
+let search_st = student.find( item => item.id == 2); // return one match or undefined
+let filter_st = student.filter( item => item.id < 3); // return an array
 // console.log(filter_st);
 
 // ---------- MAP
@@ -166,4 +174,7 @@ let character = ["Bilbo", "Gandalf", "Nazgul"];
 // sort(fn)
 let shuffle_numbers = [10, -5, 5, 15, 8, 2];
 shuffle_numbers.sort((a, b) => a - b);
-console.log(shuffle_numbers);
+// console.log(shuffle_numbers);
+
+let countries = ['Österreich', 'Andorra', 'Vietnam'];
+// console.log(countries.sort( (a, b) => a.localeCompare(b)));
