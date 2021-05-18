@@ -178,3 +178,11 @@ shuffle_numbers.sort((a, b) => a - b);
 
 let countries = ['Österreich', 'Andorra', 'Vietnam'];
 // console.log(countries.sort( (a, b) => a.localeCompare(b)));
+
+
+function sum(arr) {
+    let reducer = (sum, val) => sum + val;
+    return arr.reduce(reducer);
+}
+
+console.log(sum([1, 5, 4]));

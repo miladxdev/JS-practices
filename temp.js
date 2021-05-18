@@ -37,8 +37,20 @@ books.shift();
 // [ 'Animal Farm', 'Gambler', '1984' ]
 
 books.forEach(function(value, index) {
-    console.log(value + ' is index '+ index);
+    // console.log(value + ' is index '+ index);
 });
 // Animal Farm is index 0
 // Gambler is index 1
 // 1984 is index 2
+
+let obj = {
+    name: 'milad',
+    age: 28
+}
+let map = new Map();
+
+map.set(obj, '...');
+
+obj = null;
+
+console.log(map.values());

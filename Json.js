@@ -63,5 +63,21 @@ let meetup = {
 meetup.place = room;      // meetup references room
 room.occupiedBy = meetup; // room references meetup
 
-console.log(JSON.stringify(meetup)); // Error: Converting circular structure to JSON
+// console.log(JSON.stringify(meetup)); // Error: Converting circular structure to JSON
 // console.log( JSON.stringify(meetup, ['title', 'participants', 'name', 'place', 'number'])); // fix problem
+
+// JSON parse -------------------------------
+let userData = '{"name": "john", "age": 35}';
+let userEnc  = JSON.parse(userData);
+// console.log(userEnc);
+
+let strServer = '{"title": "conference", "date": "2017-11-30T12:00:00.000Z"}';
+let meetupLoc = JSON.parse(strServer);
+console.log(meetupLoc);
+// console.log(meetupLoc.date.getDate()); // TypeError: meetupLoc.date.getDate is not a function
+// fixing the problem
+let meetupFix = JSON.parse(strServer, function(key, value) { // reviver function
+  if (key == 'date') return new Date(value);
+  return value;
+});
+console.log(meetupFix.date.getFullYear()); 
