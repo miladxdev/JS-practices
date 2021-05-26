@@ -44,6 +44,58 @@ class Cricle {
 
 circle1 = new Cricle(5);
 circle2 = new Cricle(6);
-circle3 = new Cricle(7);
+// console.log(circle1.area);
 
-console.log(myCar1);
+
+
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+        this.speed = 0;
+    }
+    run(speed) {
+        this.speed = speed;
+        console.log(`${this.name} runs ${this.speed} km/h`);
+    }
+    stop() {
+        console.log(`${this.name} stoped!`);
+    }
+    sound() {
+        console.log('no sound!...');
+    }
+}
+
+let animal = new Animal('Dog');
+// animal.run(20);
+
+class Cat extends Animal {
+    constructor(name, color) {
+        super(name);
+        this.color = color;
+    }
+    sound() { console.log(`${this.name + this.color} says meeww...`) }
+}
+
+let cat = new Cat('catie', 'black');
+cat.sound();
+
+
+
+
+// prototype inheritance------------- only object or null and its read only
+
+let _animal = {
+  eats: true,
+  walk() {
+    console.log("Animal walk");
+  }
+};
+
+let _rabbit = {
+    jumps: true,
+    __proto__: _animal // animal is the prototype of rabbit
+};
+
+// rabbit.walk();
+// console.log(Object.entries(rabbit));
