@@ -78,24 +78,101 @@ class Cat extends Animal {
 }
 
 let cat = new Cat('catie', 'black');
-cat.sound();
+// cat.sound();
 
 
 
+class Article {
+    constructor(title, date) {
+        this.title = title;
+        this.date = date;
+    }
+    static createToday() {
+        return new this("Today's digest", new Date());
+    }
+}
+// that’s not a method of an article, but a method of the whole class.
+let article = Article.createToday();
+// console.log( article );
 
-// prototype inheritance------------- only object or null and its read only
 
-let _animal = {
-  eats: true,
-  walk() {
-    console.log("Animal walk");
-  }
-};
 
-let _rabbit = {
-    jumps: true,
-    __proto__: _animal // animal is the prototype of rabbit
-};
+// --- Private and protected properties and methods ---
+// Internal interface – methods and properties, accessible from other methods of the class, but not from the outside.
+// External interface – methods and properties, accessible also from outside the class.
 
-// rabbit.walk();
-// console.log(Object.entries(rabbit));
+// Let’s make a simple coffee machine class first:
+class CoffeeMachine1 {
+    waterAmount = 0; // public property
+
+    constractor(power) {
+        this.power = power;  // public property
+        console.log(`created a coffee-machine, power: ${power}`);
+    }
+
+}
+// create the coffee machine
+let coffeeMachine1 = new CoffeeMachine1(100);
+
+// add water
+coffeeMachine1.waterAmount = 200;
+// console.log(coffeeMachine1);
+
+
+
+// --- Protected properties ---
+class CoffeeMachine2 {
+    _waterAmount = 0; // _Protected properties 
+
+    set waterAmount(value) {
+        if(value < 0) {
+            value = 0;
+        }
+        this._waterAmount = value;
+    }
+
+    get waterAmount() {
+        return this.waterAmount;
+    }
+
+    constructor(power) {
+        this._power = power;
+    }
+
+    get power() { // Read-only “power” can't change it - no set just get
+        return this._power;
+    }
+}
+
+let coffeeMachine2 = new CoffeeMachine2(100);
+
+// add water
+coffeeMachine2.waterAmount = -10; 
+coffeeMachine2.power = 1500;
+// console.log(coffeeMachine2); 
+// CoffeeMachine { _waterAmount: 0, _power: 100 }
+// Now the access is under control, so setting the water amount below zero becomes impossible.
+
+
+
+// --- Getter/setter functions ---
+class CoffeeMachine {
+    _waterAmount = 0;
+
+    setWaterAmount(value) {
+        if(value < 0) value = 0;
+        this._waterAmount = value;
+    }
+
+    getWaterAmount() {
+        return this._waterAmount;
+    }
+}
+
+let coffeeMachine = new CoffeeMachine();
+coffeeMachine.setWaterAmount(100);
+console.log(coffeeMachine);
+
+
+// --- Private “#waterLimit ---”
+// Privates should start with #. They are only accessible from inside the class.
