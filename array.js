@@ -185,4 +185,46 @@ function sum(arr) {
     return arr.reduce(reducer);
 }
 
-console.log(sum([1, 5, 4]));
+// console.log(sum([1, 5, 4]));
+
+
+
+
+// let user01 = {
+//     name: 'milad',
+//     email: 'milad@gmail.com'
+// }
+// let user02 = {
+//     name: 'jack',
+//     email: 'jack@gmail.com'
+// }
+// let user03 = {
+//     name: 'monica',
+//     email: 'monica@gmail.com'
+// }
+
+// deleting user using filter method
+let allUsers = [ 
+    {
+        name: 'milad',
+        email: 'milad@gmail.com'
+    }, 
+    {
+        name: 'jack',
+        email: 'jack@gmail.com'
+    }, 
+    {
+        name: 'monica',
+        email: 'monica@gmail.com'
+    }
+];
+
+allUsers = allUsers.filter(value => {
+    return value.name != 'milad'; // filter milad [user01]
+});
+
+console.log(allUsers);
+// [
+//   { name: 'jack', email: 'jack@gmail.com' },
+//   { name: 'monica', email: 'monica@gmail.com' }
+// ]
