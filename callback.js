@@ -1,8 +1,8 @@
 // In JavaScript, a callback is a function passed into another function as an argument to be executed later.
-var users = ["Yara", "Ellie", "Joel"]; // Database
+
+let users = ["Tommy", "Ellie", "Joel"]; // Database
 
 function sendUser(username, callback) {
-
     setTimeout(function() {
         users.push(username);
         callback();
@@ -25,7 +25,7 @@ sendUser("Abbi", getUsers);
 // function addUser(username) {
 //     setTimeout(function() {
 //         users.push(username);
-//     }, 2000);
+//     }, ping);
 // }
 
 // function getUsers() {
@@ -37,17 +37,3 @@ sendUser("Abbi", getUsers);
 // addUser("Abbi");
 
 // getUsers();
-
-
-server_user = ['Milad', 'Masoud']; // Server
-
-function addUser(name, callback) {
-    server_user.push(name);
-    callback();
-}
-
-function printUser() {
-    console.log(server_user);
-}
-
-addUser('Ali', printUser);

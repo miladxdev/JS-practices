@@ -228,3 +228,20 @@ console.log(allUsers);
 //   { name: 'jack', email: 'jack@gmail.com' },
 //   { name: 'monica', email: 'monica@gmail.com' }
 // ]
+
+
+
+// ----- Spread syntax (...) ----
+let numberStore = [0, 1, 2];
+let newNumbers = [4, 5];
+numberStore = [...numberStore, 3, ...newNumbers];
+// console.log(numberStore);
+
+// clone array
+let artists = ['Antrax', 'Metallica', 'Megadeath'];
+let singers = [...artists]; 
+artists.push('Adele'); // singers = artist will change both!!!
+// console.log(artists, singers);
+
+
+
