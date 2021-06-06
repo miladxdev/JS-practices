@@ -10,7 +10,7 @@
 // p.then((message) => {
 //     console.log('This is in then ' + message);
 // }).catch((message) => {
-//     console.log('This is in catch ' + message);
+//     // console.log('This is in catch ' + message);
 // });
 
 
@@ -46,7 +46,7 @@ var showOff = function (phone) {
 // call our promise
 var askMom = function () {
     willIGetNewPhone.then(showOff) // chain it here
-    .then(function (fulfilled) {
+        .then(function (fulfilled) {
             console.log(fulfilled);
             // output: 'Hey friend, I have a new black Samsung phone.'
         })
@@ -54,7 +54,22 @@ var askMom = function () {
             // oops, mom don't buy it
             console.log(error.message);
             // output: 'mom is not happy'
-        });         
+        });
 };
 
-askMom();
+// askMom();
+
+
+let goingToBeach = new Promise(function (resolve, reject) {
+    let weather = 'rainy';
+    if (weather == 'sunny') {
+        resolve("we are going...");
+    } else {
+        reject(new Error(`sorry its ${weather}!`));
+    }
+});
+
+goingToBeach.then(
+    result => console.log(result),
+    error => console.log(error.message)
+);
