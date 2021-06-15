@@ -9,13 +9,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <h1 class="text">HIDE ME NOW!</h1>
-    <button id="del-btn">Hide</button>
+    <p class="text" style="background: lightgreen; padding: 20px; width: 300px">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci doloremque
+    </p>
+
+    <button id="btn-hide">Hide</button>
+    <button id="btn-show">show</button>
+    <button id="btn-css">css</button>
+    <button id="btn-on">on</button>
 
     <script>
-      $("#del-btn").click(function () {
-        $(".text").hide();
+      $(document).ready(() => {
+        $("#btn-hide").click(function () {
+          $(".text").hide(1000);
+        });
+
+        $("#btn-show").click(function () {
+          $(".text").show(1000);
+        });
+
+        $("#btn-css").click(() => {
+          $(".text").css("color", "red");
+        });
       });
+
+      $("#btn-on").on({
+        mouseenter: function () {
+          $(this).css("color", "blue");
+        },
+        mouseleave: function () {
+          $(this).css("color", "red");
+        },
+      });
+
+      getUsers();
     </script>
   </body>
 </html>
