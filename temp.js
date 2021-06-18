@@ -1,16 +1,40 @@
-
 {
-    let x = 3;
-    {   
-        let x = 4;
-        x++;
-        console.log(x);
-    }
-    console.log(x);
+  let x = 3;
+  {
+    let x = 5;
+    x++;
+    // console.log(x);
+  }
+  //   console.log(x);
 }
 
-// Nullish coalescing operator '??'
+/*
+let users = [];
 
-let name = '';
-console.log(name ?? 'Anonymous'); // result = (a !== null && a !== undefined) ? a : b;
-console.log(name || 'Anonymous'); // || returns the first truthy value.
+function getUsers() {
+  setTimeout(() => {
+    users = ["Tommy", "Joel", "Ellie"];
+  }, 2000);
+}
+
+function printUsers() {
+    console.log(users);
+}
+
+getUsers();
+printUsers();
+
+*/
+
+let users = [];
+
+function getUsers(callback) {
+  setTimeout(() => {
+    users = ["Tommy", "Joel", "Ellie"];
+    callback();
+  }, 2000);
+}
+
+getUsers(() => {
+  console.log(users);
+});
