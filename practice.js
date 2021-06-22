@@ -18,8 +18,8 @@ function generateRandomAlphaNum(len) {
 // console.log(generateRandomAlphaNum(10));
 
 function rndChar(n) {
-  if (this.args) {
-    let rndAscii = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+  if (arguments.length == 0) {
+    let rndAscii = Math.floor(Math.random() * (122 - 97 + 1)) + 97; // (max - min + 1) + min
     let rndChar = String.fromCharCode(rndAscii);
     return rndChar;
   } else {
@@ -27,16 +27,15 @@ function rndChar(n) {
     for (let i = 0; i < n; i++) {
       let rndAscii = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
       rndChar += String.fromCharCode(rndAscii);
-      return rndChar;
     }
+    return rndChar;
   }
 }
 
-console.log(rndChar(5));
+console.log(rndChar());
 
 // Numberic Conversion
 let str = "123";
 // console.log(typeof str);
-
 str = Number(str);
 // console.log(typeof str);
