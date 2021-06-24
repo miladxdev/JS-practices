@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>input file</title>
+    <style>
+      #file-text {
+        border: 1px dashed blue;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" name="file" id="file" />
+    <button id="load">Load</button>
+    <p id="file-text"></p>
+    <!-- <audio src="G:/[G] Electronic/Automatica - Nigel Stanford 2017/01 - Automatica.mp3" id="music"></audio> -->
+
+    <audio id="audio1" controls>
+      <source src="" type="audio/mp3" />
+    </audio>
+    <script>
+      const file = document.querySelector("#file");
+      const fileText = document.querySelector("#file-text");
+      const loadBtn = document.querySelector("#load");
+      const music = document.querySelector("#music");
+      const audio1 = document.querySelector("#audio1");
+      let audio = new Audio();
+      let musics = [];
+
+      loadBtn.addEventListener("click", () => {
+        var path = window.URL.createObjectURL(file.files[0]);
+        // audio.src = path;
+        // audio.play();
+        audio1.src = path;
+        musics.push({ src: path, name: file.files[0].name });
+        console.log(musics);
+      });
+    </script>
+  </body>
+</html>
