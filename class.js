@@ -165,7 +165,11 @@ class CoffeeMachine {
 
 let coffeeMachine = new CoffeeMachine();
 coffeeMachine.setWaterAmount(100);
-console.log(coffeeMachine);
+// console.log(coffeeMachine);
 
 // --- Private “#waterLimit ---”
 // Privates should start with #. They are only accessible from inside the class.
+
+// --- The instanceof operator ---
+// allows to check whether an object belongs to a certain class
+console.log(coffeeMachine instanceof CoffeeMachine);

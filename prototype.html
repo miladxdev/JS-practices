@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //
+      let Planet = function (distance, moons) {
+        this.distance = distance;
+        this.moons = moons;
+      };
+
+      Planet.prototype.shape = "globe";
+
+      let mars = new Planet("1.5 AU", 2);
+      mars.hasWater = true;
+
+      let saturn = new Planet("9.6 AU", 62);
+
+      mars.shape = "flat";
+      console.log(mars);
+      console.log(saturn.shape);
+      //
+    </script>
+  </body>
+</html>
