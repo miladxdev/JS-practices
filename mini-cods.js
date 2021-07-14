@@ -4,12 +4,12 @@ var y = null; //  is an assignment value. It can be assigned to a variable as a 
 // console.log(typeof(x)); // undefined
 // console.log(typeof(y)); // null
 
-// Get a random number in a specific range
+// --- Get a random number in a specific range
 var min = 5;
 var max = 10;
 var randNum = Math.floor(Math.random() * (max - min + 1)) + min;
-//console.log(randNum);
 
+// randon character [1] >
 function generateRandomAlphaNum(len) {
   var rdmString = "";
   for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
@@ -17,6 +17,7 @@ function generateRandomAlphaNum(len) {
 }
 // console.log(generateRandomAlphaNum(10));
 
+// --- randon chatacter [2]
 function rndChar(n) {
   if (arguments.length == 0) {
     let rndAscii = Math.floor(Math.random() * (122 - 97 + 1)) + 97; // (max - min + 1) + min
@@ -32,10 +33,6 @@ function rndChar(n) {
   }
 }
 
-console.log(rndChar());
-
-// Numberic Conversion
-let str = "123";
-// console.log(typeof str);
-str = Number(str);
-// console.log(typeof str);
+// --- Numberic Conversion
+let str = "123"; // typeof str --> string
+str = Number(str); // typeof str --> number
