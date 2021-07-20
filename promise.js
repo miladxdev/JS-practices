@@ -59,15 +59,15 @@ let goingToBeach = new Promise(function (resolve, reject) {
   let weather = "rainy";
 
   if (weather === "sunny") {
-    resolve("we are going...");
+    resolve("Let's go guys...😁");
   } else {
-    reject(new Error(`sorry its ${weather}!`));
+    reject(`sorry it's ${weather}!😟`);
   }
 });
 
 goingToBeach
   .then(
     (result) => console.log(result),
-    (error) => console.log(error.message)
+    (error) => console.log(error)
   )
-  .catch((err) => console.log(err.message));
+  .catch((err) => console.log(err));

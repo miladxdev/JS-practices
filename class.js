@@ -173,3 +173,24 @@ coffeeMachine.setWaterAmount(100);
 // --- The instanceof operator ---
 // allows to check whether an object belongs to a certain class
 console.log(coffeeMachine instanceof CoffeeMachine);
+
+//  mixin is a class containing methods that can be used by other classes without a need to inherit from it.
+
+let sayHiMixin = {
+  sayHi() {
+    console.log(`hello ${this.name}`);
+  },
+  sayBye() {
+    console.log(`Bye ${this.name}`);
+  },
+};
+
+class Userx {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.assign(Userx.prototype, sayHiMixin);
+
+new Userx("Milad").sayHi();

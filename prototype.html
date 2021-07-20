@@ -23,8 +23,35 @@
 
       mars.shape = "flat";
       console.log(mars);
-      console.log(saturn.shape);
-      //
+
+      // Prototype inheritance
+      let animal = {
+        eats: true,
+      };
+
+      let rabbit = {
+        jumps: true,
+      };
+
+      rabbit.__proto__ = animal; //" animal is the prototype of rabbit"
+      console.log(rabbit);
+      console.log(animal);
+
+      // prototype chain
+
+      let cat = {
+        say: "meew",
+        __proto__: rabbit,
+      };
+      // cat --> rabbit --> animal --> [object prototype]
+      console.log(cat.eats);
+
+      console.log(Object.keys(cat)); // only cat keys
+
+      for (let key in cat) {
+        // own + inherited keys
+        console.log(key);
+      }
     </script>
   </body>
 </html>
