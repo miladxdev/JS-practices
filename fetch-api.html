@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch api</title>
+  </head>
+  <body>
+    <script>
+      // ----- async functions -----
+      async function one() {
+        // async means function always returns a promise
+        return 1;
+      }
+
+      // one().then(console.log);
+
+      // The keyword [ await ] makes JavaScript wait until that promise settles and returns its result.
+      async function two() {
+        let promise = new Promise((resolve, reject) => {
+          setTimeout(() => resolve("Done!"), 2000);
+        });
+
+        let response = await promise; // wait until the promise resolves
+        console.log(response);
+      }
+
+      // two();
+
+      // get github users
+      async function getUsers() {
+        // read github users
+        let response = await fetch("https://api.github.com/users");
+        let users = await response.json();
+        // show data
+        console.log(users[0]);
+        console.log(response.status);
+        console.log(response.ok);
+      }
+      getUsers();
+
+      async function sendUser() {
+        let user = {
+          name: "Milad",
+          age: 27,
+        };
+
+        let response = await fetch("https://reqres.in/api/users", {
+          method: "POST",
+          headers: { "Content-Type": "application/json;charset=utf-8" },
+          body: JSON.stringify(user),
+        });
+
+        let users = await response.json();
+        console.log(users);
+        console.log(response.headers);
+      }
+
+      sendUser();
+    </script>
+  </body>
+</html>
