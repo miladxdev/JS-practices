@@ -208,7 +208,7 @@ allUsers = allUsers.filter((value) => {
   return value.name != "milad"; // filter milad [user01]
 });
 
-console.log(allUsers);
+// console.log(allUsers);
 // [
 //   { name: 'jack', email: 'jack@gmail.com' },
 //   { name: 'monica', email: 'monica@gmail.com' }
@@ -229,3 +229,18 @@ let artists = ["Antrax", "Metallica", "Megadeath"];
 let singers = [...artists];
 artists.push("Adele"); // singers = artist -> will change both!!!
 // console.log(artists, singers);
+
+// ----- 2D array -----
+let area = [];
+let row = 3;
+let col = 4;
+
+for (let r = 0; r < row; r++) {
+  area[r] = [];
+
+  for (let c = 0; c < col; c++) {
+    area[r][c] = { x: r, y: c };
+  }
+}
+
+console.log(area);

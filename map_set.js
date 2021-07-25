@@ -57,3 +57,14 @@ for (let user of set) {
 }
 
 // console.log(set.has(obj_john)); // true
+
+// --- Weak map ----
+// The first difference between Map and WeakMap is that keys must be objects, not primitive values:
+
+let weakMap = new WeakMap();
+let obje = { x: 1 };
+
+weakMap.set(obje, "object");
+
+// WeakMap does not support iteration and methods keys(), values(), entries(), so there’s no way to get all keys or values from it.
+console.log(weakMap.get(obje));

@@ -5,23 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .red {
+        background: red;
+        border: 2px solid white;
+      }
+
+      .blue {
+        background: blue;
+      }
+    </style>
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <p class="text" style="background: lightgreen; padding: 20px; width: 300px">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci doloremque
+      <a href="#">link</a>
     </p>
 
     <button id="btn-hide">Hide</button>
     <button id="btn-show">show</button>
     <button id="btn-css">css</button>
     <button id="btn-on">on</button>
+    <button id="btn-info">info</button>
+    <button id="btn-append">append</button>
+    <button id="btn-prepend">preped</button>
+    <button id="btn-after">after</button>
+    <button id="btn-addclass">add class</button>
 
     <script>
       $(document).ready(() => {
         $("#btn-hide").click(function () {
-          $(".text").hide(1000);
+          $(".text").hide(2000, () => {
+            alert("Text is Hidden now"); // alert when the animation ends
+          });
         });
 
         $("#btn-show").click(function () {
@@ -29,7 +47,7 @@
         });
 
         $("#btn-css").click(() => {
-          $(".text").css("color", "red");
+          $(".text").css("color", "red").slideUp(1000).slideDown(1000); // chaining
         });
       });
 
@@ -42,8 +60,32 @@
         },
       });
 
+      $("#btn-info").click(() => {
+        alert($(".text").text() + $(".text > a").attr("href"));
+      });
+
+      $("#btn-append").click(() => {
+        $(".text").append("APP ");
+      });
+
+      $("#btn-prepend").click(() => {
+        $(".text").prepend("PRE ");
+      });
+
+      $("#btn-after").click(() => {
+        let text1 = $("<i></i>").text("I Love ");
+        let text2 = document.createElement("b");
+        text2.innerHTML = "jQuery";
+
+        $(".text").after(text1, text2);
+      });
+
+      $(".text").click(function () {
+        $(this).toggleClass(".red");
+      });
+
       $.ajax({
-        url: "https://reqres.in/api/users",
+        // url: "https://reqres.in/api/users",
         type: "GET",
         success: function (response) {
           console.log(response.data);
