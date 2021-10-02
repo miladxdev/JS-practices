@@ -26,15 +26,16 @@ printUsers();
 
 */
 
-let users = [];
+// let users = [];
 
-function getUsers(callback) {
-  setTimeout(() => {
-    users = ["Tommy", "Joel", "Ellie"];
-    callback();
-  }, 2000);
-}
+// function getUsers(callback) {
+//   setTimeout(() => {
+//     users = ["Tommy", "Joel", "Ellie"];
+//     callback();
+//   }, 2000);
+// }
 
-getUsers(() => {
-  console.log(users);
-});
+// getUsers(() => {
+//   console.log(users);
+// });
+

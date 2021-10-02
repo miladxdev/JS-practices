@@ -7,12 +7,11 @@
     <title>Document</title>
     <style>
       .red {
-        background: red;
-        border: 2px solid white;
+        color: red;
       }
 
       .blue {
-        background: blue;
+        color: blue;
       }
     </style>
     <!-- jQuery CDN -->
@@ -32,7 +31,9 @@
     <button id="btn-append">append</button>
     <button id="btn-prepend">preped</button>
     <button id="btn-after">after</button>
-    <button id="btn-addclass">add class</button>
+    <button id="addclass">add class</button>
+    <button id="btn-attr">attr</button>
+    <button id="btn-remove">remove</button>
 
     <script>
       $(document).ready(() => {
@@ -49,47 +50,94 @@
         $("#btn-css").click(() => {
           $(".text").css("color", "red").slideUp(1000).slideDown(1000); // chaining
         });
-      });
 
-      $("#btn-on").on({
-        mouseenter: function () {
-          $(this).css("color", "blue");
-        },
-        mouseleave: function () {
-          $(this).css("color", "red");
-        },
-      });
+        $("#btn-on").on({
+          mouseenter: function () {
+            $(this).css("color", "blue");
+          },
+          mouseleave: function () {
+            $(this).css("color", "red");
+          },
+        });
 
-      $("#btn-info").click(() => {
-        alert($(".text").text() + $(".text > a").attr("href"));
-      });
+        $("#btn-info").click(() => {
+          alert($(".text").text() + $(".text > a").attr("href"));
+        });
 
-      $("#btn-append").click(() => {
-        $(".text").append("APP ");
-      });
+        $("#btn-append").click(() => {
+          $(".text").append("APP ");
+        });
 
-      $("#btn-prepend").click(() => {
-        $(".text").prepend("PRE ");
-      });
+        $("#btn-prepend").click(() => {
+          $(".text").prepend("PRE ");
+        });
 
-      $("#btn-after").click(() => {
-        let text1 = $("<i></i>").text("I Love ");
-        let text2 = document.createElement("b");
-        text2.innerHTML = "jQuery";
+        $("#btn-after").click(() => {
+          let text1 = $("<i></i>").text("I Love ");
+          let text2 = document.createElement("b");
+          text2.innerHTML = "jQuery";
 
-        $(".text").after(text1, text2);
-      });
+          $(".text").after(text1, text2);
+        });
 
-      $(".text").click(function () {
-        $(this).toggleClass(".red");
-      });
+        $(".text").click(function () {
+          $(this).toggleClass("red");
+        });
 
-      $.ajax({
-        // url: "https://reqres.in/api/users",
-        type: "GET",
-        success: function (response) {
-          console.log(response.data);
-        },
+        $(".text").click(function () {
+          alert($(this).html());
+        });
+
+        // $(".text").mousedown(function () {
+        //   $("body").text("set body text");
+        // });
+
+        $(".text").mousedown(function () {
+          $(this).html(function (i, origText) {
+            return "old text: " + origText + "new text" + i;
+          });
+        });
+
+        $("a").click(function () {
+          $("a").attr("href", "https://wwww.wikipedia.com/");
+        });
+
+        $("#btn-attr").click(function () {
+          $("a").attr("href", function (i, origin) {
+            return origin + "/city";
+          });
+        });
+
+        // create element
+        const element = $("<b></b>").text("new element");
+        $(".text").after(element);
+
+        // remove element
+        $("#btn-remove").click(function () {
+          $(".text").remove(); // empty -> removes all child element
+        });
+
+        $("#addclass").click(function () {
+          $("button, p").addClass("blue");
+        });
+
+        // get css property
+        $("b").click(function () {
+          alert($(this).css("color"));
+        });
+
+        // set css property
+        $("b").click(function () {
+          $("b").css({ color: "red", "font-size": "24px" });
+        });
+
+        $.ajax({
+          // url: "https://reqres.in/api/users",
+          type: "GET",
+          success: function (response) {
+            console.log(response.data);
+          },
+        });
       });
     </script>
   </body>

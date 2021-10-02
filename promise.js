@@ -71,3 +71,5 @@ goingToBeach
     (error) => console.log(error)
   )
   .catch((err) => console.log(err));
+
+// promise chaining
